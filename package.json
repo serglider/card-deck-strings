@@ -1,0 +1,50 @@
+{
+  "name": "card-deck-strings",
+  "version": "1.0.0",
+  "description": "Provides unicode strings for playing cards",
+  "keywords": [
+    "playing card",
+    "playing cards",
+    "card deck",
+    "playing card unicode",
+    "playing cards unicode",
+    "card deck unicode",
+    "playing card string",
+    "playing cards strings",
+    "card deck strings"
+  ],
+  "author": "Sergey Chernykh <s-chernykh@outlook.com> (https://github.com/serglider)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serglider/dice-textures.git"
+  },
+  "main": "dist/card-deck-strings.cjs.js",
+  "module": "dist/card-deck-strings.esm.js",
+  "browser": "dist/card-deck-strings.umd.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.13.0",
+    "prettier": "^1.19.1",
+    "rollup": "^1.0.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "build": "rollup -c rollup/prod.config.js -m",
+    "dev": "rollup -c rollup/dev.config.js -w"
+  },
+  "files": [
+    "dist"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "printWidth": 100,
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true
+  }
+}

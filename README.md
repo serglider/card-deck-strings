@@ -1,0 +1,3 @@
+# Playing cards' strings
+
+## TODO
