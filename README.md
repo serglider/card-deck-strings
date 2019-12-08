@@ -1,6 +1,10 @@
 # Playing cards' strings
 
-It's convenient to use Unicode strings while prototyping a card game. This library is a small wrapper for those strings to make it even more convenient.
+It's convenient to use Unicode strings while prototyping a card game.
+
+[Wikipedia](https://en.wikipedia.org/wiki/Playing_cards_in_Unicode) [Demo](https://serglider.github.io/card-deck-strings/)
+
+This library is a small wrapper for those strings to make it even more convenient.
 
 ## Setup
 ```card-deck-strings``` can be installed with npm or using a content delivery network URL to embed it on your HTML page
