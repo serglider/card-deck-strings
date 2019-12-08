@@ -6,13 +6,13 @@ It's convenient to use Unicode strings while prototyping a card game. This libra
 ```card-deck-strings``` can be installed with npm or using a content delivery network URL to embed it on your HTML page
 
 ```bash
-npm i dice-textures
+npm i card-deck-strings
 ```
 
 or
 
 ```html
-<script src="https://unpkg.com/dice-textures/dist/dice-textures.umd.js"></script>
+<script src="https://unpkg.com/card-deck-strings"></script>
 ```
 
 ## Usage
