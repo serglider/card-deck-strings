@@ -3,10 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Card strings demo page</title>
+
     <link rel="stylesheet" href="demo/style.css">
     <script src="https://unpkg.com/card-deck-strings" defer></script>
     <script src="demo/app.js" defer></script>
 </head>
 <body>
+
+<div style="display: flex;">
+    <aside>
+        <style class="editor" spellcheck="false" contenteditable="true">
+/* Edit styles here */
+
+.card {
+    font-size: 200px;
+    letter-spacing: 5px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.card-black {
+    color: #000000;
+}
+.card-red {
+    color: #000000;
+}
+.card-back {
+    color: #000000;
+}
+.card-joker {
+    color: #000000;
+}
+.card-trump {
+    color: #000000;
+}
+        </style>
+    </aside>
+
+
+    <main>
+        <h2 class="header">Playing card strings</h2>
+        <h4>Deck</h4>
+        <hr>
+        <div id="deck"></div>
+        <h4>Back</h4>
+        <hr>
+        <div id="back"></div>
+        <h4>Jokers</h4>
+        <hr>
+        <div id="jokers"></div>
+        <h4>Trumps</h4>
+        <hr>
+        <div id="trumps"></div>
+    </main>
+</div>
 </body>
 </html>

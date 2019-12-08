@@ -1,51 +1,42 @@
-const ranksMap = {
-    ace: 'a',
-    two: '2',
-    three: '3',
-    four: '4',
-    five: '5',
-    six: '6',
-    seven: '7',
-    eight: '8',
-    nine: '9',
-    ten: '10',
-    knight: 'kn',
-    jack: 'j',
-    queen: 'q',
-    king: 'k',
-};
-const shortRanks = Object.values(ranksMap);
-const suits = ['s', 'h', 'c', 'd'];
-const cardIds = shortRanks.reduce((acc, r) => {
+const main = document.querySelector('main');
+const deckBlock = main.querySelector('#deck');
+const backBlock = main.querySelector('#back');
+const jokersBlock = main.querySelector('#jokers');
+const trumpsBlock = main.querySelector('#trumps');
+
+const ranks = 'a k q j kn 10 9 8 7 6 5 4 3 2'.split(' ');
+const suits = 's h c d'.split(' ');
+const jokers = 'rj wj bj'.split(' ');
+const trumpIndices = Array.from(Array(21), (_, i) => i);
+const cards = ranks.reduce((acc, r) => {
     const allOfSuit = suits.map(s => r + s);
     return [...acc, ...allOfSuit];
 }, []);
 
-cardIds.forEach(id => {
+
+cards.forEach(id => {
     const str = CardDeck.getCard(id);
     const last = id.slice(-1);
-    const className = (last === 's' || last === 'c') ? 'color-black' : 'color-red';
-    insertSpan(str, className);
+    const className = (last === 's' || last === 'c') ? 'card-black' : 'card-red';
+    insertSpan(deckBlock, str, className);
 });
 
 const back = CardDeck.getCardBack();
-insertSpan(back, 'color-blue');
+insertSpan(backBlock, back, 'card-back');
 
-['rj', 'wj', 'bj'].forEach(id => {
+jokers.forEach(id => {
     const str = CardDeck.getJoker(id);
-    console.log(str);
-    insertSpan(str, 'color-yellow');
+    insertSpan(jokersBlock, str, 'card-joker');
 });
 
-Array.from(Array(21), (_, i)=> CardDeck.getTrump(i)).forEach(str=>{
-    insertSpan(str, 'color-black');
+trumpIndices.forEach(index => {
+    const str = CardDeck.getTrump(index);
+    insertSpan(trumpsBlock, str, 'card-trump');
 });
 
-
-
-function insertSpan(str, className) {
+function insertSpan(parent, str, className) {
     const panel = document.createElement('span');
     panel.className = 'card ' + className;
     panel.textContent = str;
-    document.body.appendChild(panel);
+    parent.appendChild(panel);
 }
