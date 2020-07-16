@@ -6,9 +6,9 @@ export function getCard(cardID: string): string {
     const normalizedID = cardID.toLowerCase();
     const { isValid, isID } = validateCard(normalizedID);
     if (!isValid) {
-        throw new Error('Invalid card identificator');
+        throw new Error('Invalid card identifier');
     }
-    const id = isID ? cardID : getCardID(normalizedID);
+    const id = isID ? normalizedID : getCardID(normalizedID);
     return deck[id];
 }
 
@@ -20,7 +20,7 @@ export function getJoker(cardID: string): string {
     const normalizedID = cardID.toLowerCase();
     const { isValid, isID } = validateJoker(normalizedID);
     if (!isValid) {
-        throw new Error('Invalid joker identificator');
+        throw new Error('Invalid joker identifier');
     }
     const id = isID ? cardID : getJokerID(normalizedID);
     return jokers[id];
